@@ -10,8 +10,11 @@
 				pattern="[%d{E MMM d, yyyy HH:mm:ss.SSS 'GMT'Z}] [%-5p] - %m\t => %C.%M(%F:%L)%n" />
 		</Console>
 	</Appenders>
+
 	<Loggers>
-		<Root level="error">
+		<Logger name="org.springframework" level="off"/>
+
+		<Root level="error" >
 			<Appender-ref ref="STDOUT" />
 		</Root>
 		<Root level="info">
