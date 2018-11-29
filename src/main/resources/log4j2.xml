@@ -11,7 +11,19 @@
 		</Console>
 	</Appenders>
 	<Loggers>
-		<Root level="all">
+		<Root level="error">
+			<Appender-ref ref="STDOUT" />
+		</Root>
+		<Root level="info">
+			<Appender-ref ref="STDOUT" />
+		</Root>
+		<Root level="warn">
+			<Appender-ref ref="STDOUT" />
+		</Root>
+		<Root level="fatal">
+			<Appender-ref ref="STDOUT" />
+		</Root>
+		<Root level="debug">
 			<Appender-ref ref="STDOUT" />
 		</Root>
 	</Loggers>
