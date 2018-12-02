@@ -2,11 +2,16 @@
 package com.demo.springbootweblogic.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -99,5 +104,17 @@ public class HelloWorldController {
 	String getId(@RequestParam String personId) {
 		logger.info("ID is " + personId);
 		return "Get ID from query string of URL without value element";
+	}
+
+	@PostMapping("/manualservletrequest")
+	Map<String, Object> uploadFile(HttpServletRequest request) {
+		Map<String, Object> resp = new HashMap<>();
+		try {
+			resp.put("myvalue", request.getParameter("myValue"));
+		} catch (Exception e) {
+			logger.error("", e);
+		}
+		resp.put("success", 1);
+		return resp;
 	}
 }
