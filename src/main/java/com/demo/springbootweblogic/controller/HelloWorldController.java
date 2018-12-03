@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 */
 
 @RestController
+@RequestMapping(value = "/hello")
 public class HelloWorldController {
 
 	private static Logger logger = LogManager.getLogger(HelloWorldController.class);
