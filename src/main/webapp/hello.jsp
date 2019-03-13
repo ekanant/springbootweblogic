@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
     int a= 20 ;
@@ -25,6 +26,8 @@
     <a href='<c:url value="/mvc/hello2"/>'>
       hello2
     </a>
-
+    HELLO.WORLD=><fmt:message key="HELLO.WORLD"/><br/>
+    T1=><fmt:message key="TEST_1"/><br/>
+    FMT Formatnumber=><fmt:formatNumber value="99999" pattern="#,###"/>
   </body>
 </html>

@@ -9,4 +9,25 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <context-param>
+    <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+    <param-value>language.language</param-value>  
+  </context-param>
+  <!-- Old way to declare Filter -->
+  <filter>
+    <filter-name>LocaleFilter</filter-name>
+    <filter-class>com.demo.springbootweblogic.filter.LocaleFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LocaleFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>TestLoginFilter</filter-name>
+    <filter-class>com.demo.springbootweblogic.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>TestLoginFilter</filter-name>
+    <url-pattern>/mvc/*</url-pattern>
+  </filter-mapping>
 </web-app>
