@@ -118,4 +118,16 @@ public class HelloWorldController {
 		resp.put("success", 1);
 		return resp;
 	}
+
+	@GetMapping("/testspringsecurity")
+	Map<String, Object> testSpringSecurity(HttpServletRequest request) {
+		Map<String, Object> resp = new HashMap<>();
+		try {
+			resp.put("pass", 1);
+		} catch (Exception e) {
+			logger.error("", e);
+		}
+		resp.put("success", 1);
+		return resp;
+	}
 }
